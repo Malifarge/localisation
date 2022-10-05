@@ -8,6 +8,7 @@ const Card = ({bar}) =>{
 
     const {active} = useContext(MapContext)
     return(
+        
         <div className={`${active.name===name && 'active'} Card`}>
             <h1>{name}</h1>
             <p>{address}</p>
