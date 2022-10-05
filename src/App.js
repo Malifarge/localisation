@@ -9,7 +9,7 @@ import './App.css';
 const App = () => {
 
   return (
-   <MapContextProvider>s
+   <MapContextProvider>
       <section className="flex">
         <Article/>
         <Map/>

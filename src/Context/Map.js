@@ -18,11 +18,14 @@ const MapContextProvider = ({children}) => {
     },[])
 
     const [location, setLocation] = useState(null)
+    const [active,setactive] = useState('')
 
     const bars = Bars
     const value= {
         location: location,
-        bars: bars
+        bars: bars,
+        active:active,
+        setactive: setactive
     }
 
     return <MapContext.Provider value={value}>{children}</MapContext.Provider>
