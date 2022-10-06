@@ -6,12 +6,12 @@ import Card from "./Card"
 
 const Article = () =>{
 
-    const {bars} = useContext(MapContext)
+    const {bars,active} = useContext(MapContext)
 
     return(
         <article className="flex clmn w100-30">
             {bars.map((bar)=>{
-              return <Card bar={bar} key={`${bar.name} ${bar.created_at}`}/>
+              return <Card bar={bar} selected={active.id===bar.id && active} key={bar.id}/>
             })}
         </article>
     )

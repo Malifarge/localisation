@@ -1,15 +1,20 @@
-import { useContext} from "react"
-import { MapContext } from "../Context/Map"
+import {useEffect,useRef} from "react"
 
-const Card = ({bar}) =>{
+const Card = ({bar,selected}) =>{
 
+    const ref=useRef()
 
-    const {name,address,price} = bar
+    const {name,address,price,id} = bar
 
-    const {active} = useContext(MapContext)
+    useEffect(()=>{
+        if(selected){
+            ref.current.scrollIntoView({behavior: 'smooth'})
+        }
+    },[selected])
+
     return(
         
-        <div className={`${active.name===name && 'active'} Card`}>
+        <div className={`${selected.id===id && 'active'} Card`} ref={ref}>
             <h1>{name}</h1>
             <p>{address}</p>
             <p>price: {price}€</p>

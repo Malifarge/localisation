@@ -10,6 +10,12 @@
   width: 30%;
 }
 
+.center{
+  align-items: center;
+  justify-content: center;
+  width:100% ;
+}
+
 .Card{
   border: 1px solid black;
   border-radius: 20px;
@@ -19,11 +25,12 @@
 
 .loader {
   border: 10px solid #f3f3f3;
-  border-top: 10px solid #3498db;
+  border-top: 10px solid #8512af;
   border-radius: 50%;
   width: 80px;
   height: 80px;
   animation: spin 1s linear infinite;
+
 }
 
 section{
@@ -33,7 +40,7 @@ section{
 
 article{
   height: 100vh; 
-  overflow:scroll;
+  overflow-y:scroll;
 }
 
 @keyframes spin {

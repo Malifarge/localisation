@@ -13,7 +13,10 @@ const MapContextProvider = ({children}) => {
             })
         },
         error =>{
-            console.log(error);
+            setLocation({
+                lat:48.8534,
+                lng:2.3488
+            })
         })
     },[])
 

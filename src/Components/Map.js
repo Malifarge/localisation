@@ -10,7 +10,7 @@ const Map = () =>{
     const {location,bars} = useContext(MapContext)
    
     if(!location){
-        return( <Loader/>)
+        return(<div className="flex center"><Loader/></div>)
     }else{
         return(
             <MapContainer center={location} zoom={20} scrollWheelZoom={true} className='map'>
@@ -19,7 +19,7 @@ const Map = () =>{
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 {bars.map((bar)=>{
-                    return <Markers bar={bar} key={`${bar.name} ${bar.created_at}`}/>
+                    return <Markers bar={bar} key={bar.id}/>
                 })}
             </MapContainer>
         )

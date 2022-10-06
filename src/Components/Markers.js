@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { MapContext } from "../Context/Map"
 
-import {Marker,Popup } from 'react-leaflet'
+import {Marker, Tooltip } from 'react-leaflet'
 import { Icon } from 'leaflet'
 
 const markerIcon = new Icon({
@@ -17,17 +17,20 @@ const Markers = ({bar})=>{
     
     const position= [latitude, longitude]
 
-    const handleEnterMarker = (name) => {
-      setactive(name)
+    const handleEnterMarker = (bar) => {
+      setactive(bar)
     }
     
         if(latitude && longitude){
           return(
-          <Marker position={position} icon={markerIcon} opacity={0.8}>
-          <Popup>
+          <Marker position={position} icon={markerIcon} opacity={0.8} eventHandlers={{
+            mouseover: ()=>{
+              handleEnterMarker(bar)
+            }
+          }}>
+          <Tooltip>
             <h1>{name}</h1>
-            <button onClick={() =>handleEnterMarker({name})}>see</button>
-          </Popup>
+          </Tooltip>
         </Marker>
         )}
 }
